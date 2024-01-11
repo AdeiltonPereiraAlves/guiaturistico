@@ -42,7 +42,7 @@ img{
     width: 700px;
 }
 .editePost{
-    display: none;
+    display: flex;
     align-items: center;
     position: absolute;
     position: fixed;
