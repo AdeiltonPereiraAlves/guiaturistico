@@ -1,0 +1,121 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+.editar, .remove{
+    cursor: pointer;
+
+}
+img{
+    width: 100px;
+    height: 100px;
+}
+.container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 10px;
+    width: 100%;
+    height: 500px;
+    background-color: #F0F0F1;
+    gap: 20px;
+    
+}
+.content{
+    display: flex;
+    margin:10px;
+    padding: 10px;
+    height: 200px;
+    background-color: #F6F7F7;
+}
+.divh1{
+    max-width: 300px;
+    height: 100px;
+}
+.divimg{
+    display: flex;
+    margin: 10px;
+    gap: 10px;
+    padding: 10px;
+    width: 700px;
+}
+.editePost{
+    display: none;
+    align-items: center;
+    position: absolute;
+    position: fixed;
+    border-radius: 5px;
+    justify-content: center;
+    background-color:#dbdbdb;
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.334);
+    width: 50%;
+    right: 20%;
+    margin: 20px auto;
+    height: 70%;
+}
+nav{
+    background-color:#222222 ;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    gap: 10px;
+    padding: 10px;
+}
+nav a {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 2rem;
+    margin: 10px;
+}
+/* .form-edite{
+    position:relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+
+}
+.input{
+    width: 300px;
+    height: 80px;
+    font-size: 1em;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+}
+.fechar{
+   position: absolute;
+   right: 0;
+   top: 0;
+   margin-top: 9px;
+   width: 50px;
+   font-weight: bold;
+   font-size: 2em;
+   color: #222222;
+   height: 50px;
+   cursor: pointer;
+   border: none;
+}
+.concluir{
+    background-color: rgb(116, 227, 190);
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 50px;
+    font-size: 1em;
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.334);
+}
+.concluir:hover{
+    background-color: rgb(102, 239, 193);
+    transition: .5s;
+    color: #F0F0F1;
+} */
