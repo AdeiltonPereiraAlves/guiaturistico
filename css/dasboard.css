@@ -42,7 +42,7 @@ img{
     width: 700px;
 }
 .editePost{
-    display: flex;
+    display: none;
     align-items: center;
     position: absolute;
     position: fixed;
@@ -70,7 +70,7 @@ nav a {
     font-size: 2rem;
     margin: 10px;
 }
-/* .form-edite{
+.form-edite{
     position:relative;
     display: flex;
     align-items: center;
@@ -118,4 +118,4 @@ nav a {
     background-color: rgb(102, 239, 193);
     transition: .5s;
     color: #F0F0F1;
-} */
+}
