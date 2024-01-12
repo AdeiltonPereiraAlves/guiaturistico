@@ -11,6 +11,13 @@ img{
     width: 100px;
     height: 100px;
 }
+.containerDash{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 10px auto;
+    height: 100%;
+}
 .container{
     position: relative;
     display: flex;
@@ -31,11 +38,12 @@ img{
     background-color: #F6F7F7;
 }
 .divh1{
-    max-width: 300px;
+    max-width: 200px;
     height: 100px;
 }
 .divimg{
     display: flex;
+    
     margin: 10px;
     gap: 10px;
     padding: 10px;
@@ -44,16 +52,35 @@ img{
 .editePost{
     display: none;
     align-items: center;
+    flex-direction: column;
     position: absolute;
     position: fixed;
+    flex-wrap: wrap;
     border-radius: 5px;
     justify-content: center;
-    background-color:#dbdbdb;
+    background-color:#efefef;
     box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.334);
     width: 50%;
     right: 20%;
     margin: 20px auto;
     height: 70%;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 80%;
+    height: 100%;
+    margin: 20px;
+    gap:10px;
+}
+#titulo, #img{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1em;
+   
 }
 nav{
     background-color:#222222 ;
@@ -70,26 +97,9 @@ nav a {
     font-size: 2rem;
     margin: 10px;
 }
-.form-edite{
-    position:relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 10px;
-    height: 100%;
-    width: 100%;
-
-}
-.input{
-    width: 300px;
-    height: 80px;
+#desc{
     font-size: 1em;
-    border-radius: 5px;
-    padding: 10px;
-    border: none;
+    
 }
 .fechar{
    position: absolute;
@@ -104,7 +114,21 @@ nav a {
    cursor: pointer;
    border: none;
 }
-.concluir{
+.btn{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.divbtn{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 10px;
+}
+.concluir,.editar,.remove{
     background-color: rgb(116, 227, 190);
     width: 200px;
     border: none;
@@ -114,7 +138,7 @@ nav a {
     font-size: 1em;
     box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.334);
 }
-.concluir:hover{
+.concluir:hover,.editar:hover, .remove:hover{
     background-color: rgb(102, 239, 193);
     transition: .5s;
     color: #F0F0F1;

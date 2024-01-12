@@ -15,13 +15,17 @@
     <div class="containerDash">
         <div class="editePost p">
            <button class="fechar">X</button>
-           <form action="submit">
+           <form action="submit" class="form">
+             <label for="titulo">Titulo:</label>
              <input id="titulo" type="text" name="titulo" value="">
+             <label for="img">Url da Imagem:</label>
              <input id="img" type="text" name="img" value="">
-             <input id="desc" type="text" name="desc" value="">
-             <input class="concluir" type="submit" value="Concluir">
+             <label for="desc">Descrição:</label>
+             <textarea name="desc" id="desc" cols="30" rows="10"></textarea>
+
+             <img class="imgEd" src="#" alt="img">
+             <div class="btn"><input class="concluir" type="submit" value="Concluir"></div>
            </form>
-            <img class="imgEd" src="#" alt="img">
         </div>
         
     </div>
