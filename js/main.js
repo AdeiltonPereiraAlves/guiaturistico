@@ -18,11 +18,11 @@ async function Home(){
      const data = await fetchData(url)
      const container = document.querySelector('.container')
      data.forEach((post) =>{
-          container.innerHTML +=`<div>
+          container.innerHTML +=`<div class="contentHome"><div class="h1Home">
                <h1>${post.titulo}</h1>
           </div>
-          <div><img src ="${post.foto}" alt="img"></div>
-          <div><p>${post.descricao}</div>`
+          <div class="imgHome"><img src ="${post.foto}" alt="img"></div>
+          <div class="pHome"><p>${post.descricao}</div></div>`
      })
 }
 

@@ -12,12 +12,15 @@ body{
 }
 .navbar{
    background-color:#222222 ;
-   height: 8rem;
+   width: 100%;
+   position: fixed;
+   height: 4rem;
    display: flex;
    align-items: center;
    justify-content: baseline;
    gap: 10px;
    padding: 10px;
+   
 }
 .navbar a{
     text-decoration: none;
@@ -27,18 +30,47 @@ body{
 }
 .container{
     display: flex;
+    flex-wrap: wrap;
+    width:100% ;
     height: 100%;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    padding: 20px;
+    padding-top:200px ;
+    
+}
+.contentHome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+.h1Home{
+    margin-top: 20px;
+}
+.imgHome{
+    display: flex;
+    height: 500px;
+    width: 500px;
+
+
+}
+.pHome{
+    padding: 10px;
+    max-width: 500px;
+
+}
+.imgHome>img{
+    width: 500px;
+    height: 400px;
 }
 h1{
     margin-bottom: 20px;
 }
-img{
-    width: 40%;
-}
+/* img{
+    width: 50%;
+} */
 p{
     max-width: 750px;
     word-spacing: 2px;
