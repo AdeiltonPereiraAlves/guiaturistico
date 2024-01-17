@@ -1,7 +1,7 @@
 
 
 import { fetchData } from './fetchData.js';
-const url = "http://localhost:3000/locais";
+const url = "https://adeiltonpereiraalves.github.io/guiaturisticojson/locais.json";
 function generateShortId(length) {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let result = '';
