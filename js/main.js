@@ -16,13 +16,17 @@ function generateShortId(length) {
 
 async function Home(){
      const data = await fetchData(url)
+     console.log(typeof data)
      const container = document.querySelector('.container')
-     data.forEach((post) =>{
+     Object.values(data).forEach((data) =>{
+         data.forEach((post) => {
+            console.log(post)
           container.innerHTML +=`<div class="contentHome"><div class="h1Home">
                <h1>${post.titulo}</h1>
           </div>
           <div class="imgHome"><img src ="${post.foto}" alt="img"></div>
           <div class="pHome"><p>${post.descricao}</div></div>`
+         })
      })
 }
 
@@ -109,64 +113,66 @@ enviar.addEventListener('click',(e) =>{
 async function DashBoad(){
      const data = await fetchData(url)
      const containerDash = document.querySelector('.containerDash')
-     data.forEach((post) =>{
-           const content = document.createElement('div')
-          // const containerdash = document.querySelector('.container')
-            const divh1 = document.createElement('div')
-            divh1.classList.add('divh1')
-            const divImg = document.createElement('div')
-            divImg.classList.add('divimg')
-            const divBtn = document.createElement('div')
-            divBtn.classList.add('divbtn')
-            content.classList.add('content')
-
-            const titulo = document.createElement('h1')
-            const img = document.createElement('img')
-            const descricao = document.createElement('P')
-            const editar = document.createElement('button')
-            editar.classList ='editar'
-            editar.textContent ="Editar Post"
-            const remover = document.createElement('button')
-            remover.classList='remove'
-            remover.textContent = "Remover Post"
-            titulo.textContent = post.titulo;
-            img.setAttribute('src',`${post.foto}`)
-            descricao.textContent = post.descricao;
-
-            divh1.appendChild(titulo)
-            divImg.appendChild(img)
-            
-            divImg.appendChild(descricao)
-        
-            
-            divBtn.appendChild(editar)
-            //editando post 
-            editar.addEventListener('click',(e)=>{
-               e.preventDefault()
-                
-                editPost.style.display = "flex"
-                const fechar = document.querySelector('.fechar')
-                fechar.addEventListener('click',(e) =>{
-                    e.preventDefault()
-                    editPost.style.display = "none"
-
-                })
-                editarPost(`${url}/${post.id}`)
-                
-                
-            })
-            //removendo post
-            remover.addEventListener('click',()=>{
-                deletePost(`${url}/${post.id}`)
-            })
-            
-            divBtn.appendChild(remover)
-            content.appendChild(divh1)
-            content.appendChild(divImg)
-            content.appendChild(divBtn)
-            
-            containerDash.appendChild(content)
-          })
+    Object.values(data).forEach((data) => {
+        data.forEach((post) =>{
+            const content = document.createElement('div')
+           // const containerdash = document.querySelector('.container')
+             const divh1 = document.createElement('div')
+             divh1.classList.add('divh1')
+             const divImg = document.createElement('div')
+             divImg.classList.add('divimg')
+             const divBtn = document.createElement('div')
+             divBtn.classList.add('divbtn')
+             content.classList.add('content')
+ 
+             const titulo = document.createElement('h1')
+             const img = document.createElement('img')
+             const descricao = document.createElement('P')
+             const editar = document.createElement('button')
+             editar.classList ='editar'
+             editar.textContent ="Editar Post"
+             const remover = document.createElement('button')
+             remover.classList='remove'
+             remover.textContent = "Remover Post"
+             titulo.textContent = post.titulo;
+             img.setAttribute('src',`${post.foto}`)
+             descricao.textContent = post.descricao;
+ 
+             divh1.appendChild(titulo)
+             divImg.appendChild(img)
+             
+             divImg.appendChild(descricao)
+         
+             
+             divBtn.appendChild(editar)
+             //editando post 
+             editar.addEventListener('click',(e)=>{
+                e.preventDefault()
+                 
+                 editPost.style.display = "flex"
+                 const fechar = document.querySelector('.fechar')
+                 fechar.addEventListener('click',(e) =>{
+                     e.preventDefault()
+                     editPost.style.display = "none"
+ 
+                 })
+                 editarPost(`${url}/${post.id}`)
+                 
+                 
+             })
+             //removendo post
+             remover.addEventListener('click',()=>{
+                 deletePost(`${url}/${post.id}`)
+             })
+             
+             divBtn.appendChild(remover)
+             content.appendChild(divh1)
+             content.appendChild(divImg)
+             content.appendChild(divBtn)
+             
+             containerDash.appendChild(content)
+           })
+    })
      
 }
 
