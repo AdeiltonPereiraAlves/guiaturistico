@@ -22,10 +22,10 @@ async function Home(){
          data.forEach((post) => {
             console.log(post)
           container.innerHTML +=`<div class="contentHome"><div class="h1Home">
-               <h1>${post.titulo}</h1>
+               <h1>${post.name}</h1>
           </div>
-          <div class="imgHome"><img src ="${post.foto}" alt="img"></div>
-          <div class="pHome"><p>${post.descricao}</div></div>`
+          <div class="imgHome"><img src ="${post.img}" alt="img"></div>
+          <div class="pHome"><p>${post.price}</div></div>`
          })
      })
 }
@@ -63,7 +63,11 @@ async function deletePost(url) {
 
 // editar post 
 async function editarPost(url){
+    console.log(url)
 const response = await fetch(url)
+if (!response.ok) {
+    throw new Error(`Erro ao buscar o post. Código de resposta: ${response.status}`);
+}
 const postAtual = await response.json();
 
 //pegando tags do html
@@ -105,7 +109,7 @@ enviar.addEventListener('click',(e) =>{
     
    })
   
-
+  
 }
 
 
@@ -115,6 +119,7 @@ async function DashBoad(){
      const containerDash = document.querySelector('.containerDash')
     Object.values(data).forEach((data) => {
         data.forEach((post) =>{
+            console.log(post)
             const content = document.createElement('div')
            // const containerdash = document.querySelector('.container')
              const divh1 = document.createElement('div')
@@ -156,7 +161,7 @@ async function DashBoad(){
                      editPost.style.display = "none"
  
                  })
-                 editarPost(`${url}/${post.id}`)
+                 editarPost(`${url}${post.id}`)
                  
                  
              })
