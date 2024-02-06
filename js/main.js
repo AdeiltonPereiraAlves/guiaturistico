@@ -1,7 +1,7 @@
 
 
 import { fetchData } from './fetchData.js';
-const url = "https://adeiltonpereiraalves.github.io/guiaturisticojson/";
+const url = "http://localhost:3000/locais";
 function generateShortId(length) {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let result = '';
@@ -18,16 +18,16 @@ async function Home(){
      const data = await fetchData(url)
      console.log(typeof data)
      const container = document.querySelector('.container')
-     Object.values(data).forEach((data) =>{
+    
          data.forEach((post) => {
             console.log(post)
           container.innerHTML +=`<div class="contentHome"><div class="h1Home">
-               <h1>${post.name}</h1>
+               <h1>${post.titulo}</h1>
           </div>
-          <div class="imgHome"><img src ="${post.img}" alt="img"></div>
-          <div class="pHome"><p>${post.price}</div></div>`
+          <div class="imgHome"><img src ="${post.foto}" alt="img"></div>
+          <div class="pHome"><p>${post.descricao}</div></div>`
          })
-     })
+    
 }
 
 Home()
@@ -69,7 +69,7 @@ if (!response.ok) {
     throw new Error(`Erro ao buscar o post. Código de resposta: ${response.status}`);
 }
 const postAtual = await response.json();
-
+console.log(postAtual)
 //pegando tags do html
 const novoTitulo = document.querySelector('#titulo')
 const novaImg = document.querySelector('#img')
@@ -117,7 +117,7 @@ enviar.addEventListener('click',(e) =>{
 async function DashBoad(){
      const data = await fetchData(url)
      const containerDash = document.querySelector('.containerDash')
-    Object.values(data).forEach((data) => {
+   
         data.forEach((post) =>{
             console.log(post)
             const content = document.createElement('div')
@@ -161,7 +161,7 @@ async function DashBoad(){
                      editPost.style.display = "none"
  
                  })
-                 editarPost(`${url}${post.id}`)
+                 editarPost(`${url}/${post.id}`)
                  
                  
              })
@@ -177,7 +177,7 @@ async function DashBoad(){
              
              containerDash.appendChild(content)
            })
-    })
+    
      
 }
 
