@@ -1,7 +1,7 @@
 
 
 import { fetchData } from './fetchData.js';
-const url = "http://localhost:3000/locais";
+const url = "https://json-guia-turistico.vercel.app/locais";
 function generateShortId(length) {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let result = '';
